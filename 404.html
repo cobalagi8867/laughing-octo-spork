@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rithvik Rao | Blockchain Research</title>
+
+  <meta
+    name="description"
+    content="Rithvik Rao's research interests in blockchain technology, decentralized systems, digital economies, and emerging technologies."
+  >
+
+  <link
+    rel="canonical"
+    href="https://rithvikrao.com/"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      background: #f7f9fc;
+      color: #263238;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #1976d2;
+      text-decoration: none;
+      transition: .25s ease;
+    }
+
+    a:hover {
+      color: #0d47a1;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      z-index: 1000;
+
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid #e5eaf0;
+
+      box-shadow:
+        0 4px 20px rgba(0,0,0,.04);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      height: 100%;
+      margin: auto;
+      padding: 0 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #17202a;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 8px 13px;
+
+      border-radius: 7px;
+
+      color: #455a64;
+
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #1976d2;
+      background: #eef6ff;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      padding: 150px 20px 80px;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(33,150,243,.08),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 80% 80%,
+          rgba(100,181,246,.08),
+          transparent 30%
+        );
+    }
+
+    .hero-container {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .avatar-wrapper {
+      width: 165px;
+      height: 165px;
+
+      margin: 0 auto 28px;
+      padding: 5px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #1976d2,
+          #64b5f6
+        );
+
+      box-shadow:
+        0 15px 40px rgba(25,118,210,.18);
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+
+      border-radius: 50%;
+
+      background:
+        url("https://avatars.githubusercontent.com/u/7961373?v=4")
+        center / cover no-repeat;
+
+      background-color: #fff;
+    }
+
+    .hero h1 {
+      margin-bottom: 12px;
+
+      color: #17202a;
+
+      font-size: clamp(35px,6vw,52px);
+      line-height: 1.15;
+
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      color: #1976d2;
+    }
+
+    .hero-subtitle {
+      color: #607d8b;
+      font-size: 18px;
+    }
+
+    /* =========================
+       GENERAL SECTION
+    ========================== */
+
+    .section {
+      padding: 90px 20px;
+    }
+
+    .section:nth-child(even) {
+      background: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section-header {
+      margin-bottom: 35px;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      margin-bottom: 10px;
+
+      color: #17202a;
+      font-size: 34px;
+    }
+
+    .section-header p {
+      color: #78909c;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-card {
+      padding: 35px;
+
+      background: #fff;
+
+      border: 1px solid #e5eaf0;
+      border-radius: 16px;
+
+      box-shadow:
+        0 12px 35px rgba(38,50,56,.05);
+    }
+
+    .about-card p {
+      margin-bottom: 20px;
+      color: #455a64;
+      font-size: 17px;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       BLOCKCHAIN RESEARCH
+    ========================== */
+
+    .research-section {
+      background: #f7f9fc;
+    }
+
+    .research-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+      gap: 20px;
+    }
+
+    .research-card {
+      padding: 30px;
+
+      background: #fff;
+
+      border: 1px solid #e5eaf0;
+      border-radius: 15px;
+
+      box-shadow:
+        0 8px 25px rgba(38,50,56,.04);
+    }
+
+    .research-card h3 {
+      margin-bottom: 12px;
+
+      color: #263238;
+      font-size: 20px;
+    }
+
+    .research-card p {
+      color: #607d8b;
+      font-size: 15px;
+    }
+
+    .research-article {
+      margin-top: 25px;
+      padding: 35px;
+
+      background: #fff;
+
+      border-radius: 16px;
+      border: 1px solid #e5eaf0;
+    }
+
+    .research-article h3 {
+      margin-bottom: 15px;
+
+      color: #17202a;
+      font-size: 25px;
+    }
+
+    .research-article p {
+      margin-bottom: 18px;
+      color: #455a64;
+      font-size: 16px;
+    }
+
+    .research-article p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0,1fr));
+
+      gap: 18px;
+    }
+
+    .project-card {
+      padding: 25px;
+
+      background: #f7f9fc;
+
+      border: 1px solid #e5eaf0;
+      border-radius: 14px;
+
+      transition: .25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 10px 25px rgba(38,50,56,.08);
+    }
+
+    .project-card h3 {
+      margin-bottom: 8px;
+      color: #263238;
+    }
+
+    .project-card p {
+      color: #607d8b;
+      font-size: 14px;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .buttons {
+      margin-top: 30px;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 115px;
+
+      padding: 11px 20px;
+
+      border: 1px solid #1976d2;
+      border-radius: 8px;
+
+      color: #1976d2;
+
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      color: #fff;
+      background: #1976d2;
+
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      color: #fff;
+      background: #1976d2;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact {
+      text-align: center;
+      background: #fff;
+    }
+
+    .contact-text {
+      max-width: 600px;
+      margin: auto;
+
+      color: #607d8b;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 28px 20px;
+
+      text-align: center;
+
+      background: #fff;
+
+      border-top: 1px solid #e5eaf0;
+    }
+
+    footer p {
+      color: #90a4ae;
+      font-size: 13px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:750px) {
+
+      .navbar {
+        position: relative;
+        height: auto;
+      }
+
+      .nav-container {
+        padding: 15px;
+
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding: 65px 16px 70px;
+      }
+
+      .avatar-wrapper {
+        width: 145px;
+        height: 145px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .section {
+        padding: 65px 16px;
+      }
+
+      .research-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-card,
+      .research-article {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav class="navbar">
+
+    <div class="nav-container">
+
+      <a href="#home" class="logo">
+        Rithvik Rao
+      </a>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="#home" class="active">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="#about">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#blockchain">
+            Blockchain Research
+          </a>
+        </li>
+
+        <li>
+          <a href="#projects">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================
+       HOME
+  ========================== -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-container">
+
+      <div class="avatar-wrapper">
+        <div class="avatar"></div>
+      </div>
+
+      <h1>
+        Hello! I am
+        <span>Rithvik Rao</span>.
+      </h1>
+
+      <p class="hero-subtitle">
+        Computer Science, Economics &amp; Blockchain Research
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section class="section" id="about">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <h2>
+          About
+        </h2>
+
+        <p>
+          Academic interests and current work.
+        </p>
+
+      </div>
+
+      <div class="about-card">
+
+        <p>
+          I'm a sophomore at
+          <a
+            href="http://college.harvard.edu/"
+            target="_blank"
+            rel="noopener">
+            Harvard College
+          </a>
+          concentrating in Computer Science and Mathematics,
+          with a secondary in Economics.
+        </p>
+
+        <p>
+          My academic interests include computer science,
+          economics, distributed systems, and emerging
+          technologies.
+        </p>
+
+        <p>
+          I am particularly interested in the relationship
+          between technology, economic incentives, and
+          decentralized digital systems.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BLOCKCHAIN RESEARCH
+  ========================== -->
+
+  <section
+    class="section research-section"
+    id="blockchain">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <h2>
+          Blockchain Research
+        </h2>
+
+        <p>
+          Research interests in decentralized technologies
+          and digital economies.
+        </p>
+
+      </div>
+
+
+      <div class="research-grid">
+
+        <div class="research-card">
+
+          <h3>
+            Decentralized Systems
+          </h3>
+
+          <p>
+            Exploring how distributed networks can coordinate
+            information and transactions without depending
+            entirely on centralized infrastructure.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <h3>
+            Blockchain Economics
+          </h3>
+
+          <p>
+            Examining the economic incentives, market structures,
+            and mechanisms that influence blockchain-based
+            ecosystems.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <h3>
+            Digital Assets
+          </h3>
+
+          <p>
+            Studying digital assets and the technological
+            infrastructure supporting decentralized applications
+            and online economies.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <h3>
+            Web3 Infrastructure
+          </h3>
+
+          <p>
+            Investigating emerging infrastructure and applications
+            built around distributed ledgers and decentralized
+            technologies.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- RESEARCH ARTICLE -->
+
+<article class="research-article">
+
+  <h3>
+    Exploring Blockchain Applications
+  </h3>
+
+  <p>
+    Blockchain technology has evolved beyond its original
+    association with cryptocurrencies. Today, distributed
+    ledger technology is being explored across finance,
+    digital identity, data management, gaming, and other
+    online applications.
+  </p>
+
+  <p>
+    From a research perspective, an important consideration
+    is how technical architecture interacts with economic
+    incentives. Network design, transaction mechanisms,
+    transparency, and user participation can all influence
+    how blockchain-based platforms develop.
+  </p>
+
+  <p>
+    The broader blockchain ecosystem also includes a wide
+    range of platforms and digital services. When evaluating
+    an external blockchain resource, users should consider
+    its technology, transparency, security practices, and
+    the information it provides.
+  </p>
+
+  <p>
+    For additional information about blockchain-related
+    developments, readers can explore
+    <a
+      href="https://www.gratitudegang.io/bridge.html"
+      target="_blank">
+      SHIOKAMBING
+    </a>
+    for additional resources related to the blockchain
+    ecosystem.
+  </p>
+
+  <p>
+    Continued research into decentralized technologies may
+    provide useful insights into how software systems and
+    digital economies evolve.
+  </p>
+
+</article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECTS
+  ========================== -->
+
+  <section class="section" id="projects">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <h2>
+          Projects
+        </h2>
+
+        <p>
+          Selected academic and technical projects.
+        </p>
+
+      </div>
+
+
+      <div class="project-grid">
+
+        <div class="project-card">
+
+          <h3>
+            AR Connect-Four
+          </h3>
+
+          <p>
+            An augmented reality implementation
+            of the classic Connect-Four game.
+          </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <h3>
+            Crypto Economy
+          </h3>
+
+          <p>
+            Research and analysis focused on cryptocurrency
+            economics and blockchain systems.
+          </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <h3>
+            NFL Data Analysis
+          </h3>
+
+          <p>
+            Data-driven analysis and exploration of
+            NFL statistics and performance.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section class="section contact" id="contact">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <h2>
+          Contact
+        </h2>
+
+        <p class="contact-text">
+          Feel free to connect through LinkedIn or GitHub.
+        </p>
+
+      </div>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="https://linkedin.com/in/rithvikrao"
+          target="_blank"
+          rel="noopener">
+          LinkedIn
+        </a>
+
+        <a
+          class="btn"
+          href="https://github.com/rithvikrao"
+          target="_blank"
+          rel="noopener">
+          GitHub
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 Rithvik Rao. All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
